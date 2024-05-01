@@ -117,7 +117,6 @@ let getBrowser = function() {
         fullVersion  = ''+parseFloat(navigator.appVersion); 
         majorVersion = parseInt(navigator.appVersion,10);
         }
-        console.log(browserName)
         return browserName
         
 }
@@ -126,20 +125,24 @@ let getBrowser = function() {
 let maxTop = sectionTransparent.offsetHeight
 let maxBottom = sectionDresscode.getBoundingClientRect().bottom
 
-console.log(scroll_container.clientHeight)
-
+// console.log(scroll_container.clientHeight)
+console.log(sectionPhrase.backgroundSize)
 //DETECION DE ARTICULO VISIBLE///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 scroll_container.addEventListener('scroll', () => {
 // --> Checkea la posicion TOP o BOTTOM de cada articulo
     Array.from(scroll_container.children).forEach(section => {
         reachToBottom = section.getBoundingClientRect().bottom
         reachToTop = section.getBoundingClientRect().top
+
+        console.log(sectionThanks.getBoundingClientRect().top)
         console.log(sectionThanks.getBoundingClientRect().bottom)
+
         for(element of section.children) {
             element.style.opacity = '0'
             }
 // --> Presenta los H2 cada ve que la section esta en mitad de pantalla
-        if (reachToTop >= 0 && reachToBottom <= scroll_container.clientHeight) {
+        if ((reachToTop >= 0 && reachToBottom <= scroll_container.clientHeight) ||
+            (reachToTop <= 0 && reachToBottom >= scroll_container.clientHeight)) {
             console.log(section.id)
             let sectionAfter = `#${section.id}::after`
             for(style of document.styleSheets[0].rules) {
@@ -182,7 +185,6 @@ scroll_container.addEventListener('scroll', () => {
     });
 
 let browserName = getBrowser()
-console.log(browserName)
 
 //COUNTDOWN DEL EVENTO///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 setInterval(function mostrarDiferenciaTiempo() {
