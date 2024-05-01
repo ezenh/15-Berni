@@ -358,8 +358,8 @@ main {
     padding: 50px 20px;
     }
     #sectionThanks::after {
-        -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(10px) !important; 
+        -webkit-backdrop-filter: blur(0px);
+        backdrop-filter: blur(0px) !important; 
         }
     #sectionThanks h2 {
         padding-bottom: 0;
