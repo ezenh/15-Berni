@@ -363,6 +363,8 @@ main {
         }
     #sectionThanks h2 {
         padding-bottom: 0;
+        opacity: 1;
+        animation-name: none;
         }
     #sectionThanks p:nth-child(2) {
         margin-bottom: auto;

@@ -137,9 +137,13 @@ scroll_container.addEventListener('scroll', () => {
         console.log(sectionThanks.getBoundingClientRect().top)
         console.log(sectionThanks.getBoundingClientRect().bottom)
 
-        for(element of section.children) {
-            element.style.opacity = '0'
-            }
+
+        if (section.id != 'sectionThanks') {
+            for(element of section.children) {
+                element.style.opacity = '0'
+                }
+                }
+
 // --> Presenta los H2 cada ve que la section esta en mitad de pantalla
         if ((reachToTop >= 0 && reachToBottom <= scroll_container.clientHeight) ||
             (reachToTop <= 0 && reachToBottom >= scroll_container.clientHeight)) {
@@ -149,7 +153,7 @@ scroll_container.addEventListener('scroll', () => {
                 if( style.selectorText == '#sectionPhrase::after' ||
                     style.selectorText == '#sectionCountdown::after' ||
                     style.selectorText == '#sectionMap::after' ||
-                    style.selectorText == '#sectionThanks::after' ||
+                    // style.selectorText == '#sectionThanks::after' ||
                     style.selectorText == '#sectionMenu::after' ||
                     style.selectorText == '#sectionMenu::after' ||
                     style.selectorText == '#sectionGift::after' ||
