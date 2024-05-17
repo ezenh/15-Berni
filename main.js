@@ -248,3 +248,17 @@ async function initMap() {
     }
 }      
 initMap()
+
+window.addEventListener('message', (event) => {
+  if (event.data.action === 'hideSensitiveInfo') {
+      // Ocultar o cambiar contenido sensible aquí
+      const client_bank_account = document.getElementsByClassName('client_bank_account');
+      if (client_bank_account) {
+        Array.from(client_bank_account).forEach(element => {
+          console.log(element)
+          element.textContent = 'CBU/CVU/ALIAS'
+      })
+        console.log(client_bank_account)
+      }
+  }
+});
